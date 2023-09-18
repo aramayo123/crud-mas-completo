@@ -1,0 +1,27 @@
+<%- include ../layouts/cabecera.ejs %>
+<form action="../actualizar/" method="post" enctype="multipart/form-data">
+    <!--NECESARIO PARA ACTUALIZAR SINO NO SE DEFINE EL ID-->
+    <input type="hidden" name="id" value="<%=libro.id%>">
+    <div class="form-group">
+        <label for="my-input">Titulo</label>
+        <input type="text" name="titulo" id="my-input" class="form-control" value="<%=libro.titulo%>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Imagen</label><br>
+        <img src="../../images/<%=libro.imagen%>" width="100">
+        <br><br>
+        <input type="file" name="imagen" id="" class="form-control-file" value="">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Descripcion</label>
+        <input type="text" name="descripcion" id="" class="form-control" value="<%=libro.descripcion%>">
+    </div>
+    <div class="form-group">
+        <label for="my-input">Precio</label>
+        <input type="text" name="precio" id="" class="form-control" value="<%=libro.precio%>">
+    </div>
+
+    <button class="btn btn-success" type="submit">Actualizar</button>
+    <a href="/libros" class="btn btn-primary">Cancelar</a>
+</form>
+<%- include ../layouts/pie.ejs %>
